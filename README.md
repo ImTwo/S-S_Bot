@@ -1,1 +1,1 @@
-SS_Bot
+An epic discord bot
