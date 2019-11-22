@@ -28,11 +28,9 @@ module.exports = {
                 if (err) {
                     console.log('error: ', err);
                 }
-                let id = res.body.substring(1, res.body.length-1);
-
                 let code = b.substring(1, b.length - 1);
                 if (code === message.author.id) {
-                    pool.query('INSERT INTO users (id, summ) VALUES (\'' + message.author.id + '\', \'' + id + '\') ON DUPLICATE KEY UPDATE summ = \'' + ress.name + '\'', function (e, r, f) {
+                    pool.query('INSERT INTO users (id, name, summ, rg) VALUES (\'' + message.author.id + '\', \'' + ress.name + '\', \'' + ress.accountId + '\', \'' + rg + '\') ON DUPLICATE KEY UPDATE summ = \'' + ress.accountId + '\', name = \'' + ress.name + '\', rg = \'' + rg + '\'', function (e, r, f) {
                         if (e) throw new Error(e);
                     });
                     message.channel.send("Verification successful!")
