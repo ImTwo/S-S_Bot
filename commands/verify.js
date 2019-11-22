@@ -1,7 +1,6 @@
 let config = require(`../config.json`);
 let pool = require(`../functions/db.js`);
 const request = require('request');
-const filter = m => m.author.id
 
 module.exports = {
     name: 'verify',
