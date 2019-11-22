@@ -12,14 +12,10 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-client.once('ready', () => {
-    console.log('Bot running!');
-});
-
 client.on('message', message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.slice(config.prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
 
     if (!client.commands.has(commandName)) return;
@@ -32,6 +28,10 @@ client.on('message', message => {
         console.error(error);
         message.reply('There was an error trying to execute that command!');
     }
+});
+
+client.once('ready', () => {
+    console.log('Bot running!');
 });
 
 client.login(config.token);
