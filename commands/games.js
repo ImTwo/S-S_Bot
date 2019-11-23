@@ -6,6 +6,7 @@ const request = require('request');
 module.exports = {
 	name: 'games',
 	description: 'See how many games you\'ve played.',
+	usage: '[champion name]',
 	execute(message, args) {
 		pool.query('SELECT * FROM users WHERE id = \'' + message.author.id + '\'', function (error, response, f) {
 			if (error) throw new Error(error);

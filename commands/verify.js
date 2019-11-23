@@ -5,6 +5,7 @@ const request = require('request');
 module.exports = {
     name: 'verify',
     description: 'Verify your league account.',
+    usage: '<summoner_name> <region>',
     execute(message, args) {
         let region = args[1];
         let name = args[0];
