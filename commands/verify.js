@@ -12,9 +12,9 @@ module.exports = {
 
         let rg = "eun1";
         if (region === "eune") {
-            let rg = "eun1";
+            rg = "eun1";
         } else if (region === "euw") {
-            let rg = "euw1";
+            rg = "euw1";
         } else {
             message.channel.send("Not a valid region. Usage: " + config.prefix + "verify <username> <region>");
             return;
